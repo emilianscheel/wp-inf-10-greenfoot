@@ -17,37 +17,26 @@ public class Tarantel extends Spinne {
     public int kontostand = 0;
 
     public void act() {
-        this.fliegenEliminieren();
+        int schritte = fliegeSuchen();
+        this.fliegeFressen();
+        rueckweg(schritte);
+    }
+    
+    public void rueckweg(int schritte) {
+        this.linksDrehen();
+        this.linksDrehen();
+        
+        for (int i = 0; i < schritte; i++) {
+            this.schritt();
+        }
     }
 
-    public void fliegenEliminieren() {
-    
-        // Fliegen aufspüren
-        World world = getWorld();
-        List<Fliege> fliegen = world.getObjects(Fliege.class);
-
-        // Sich jede Fliege einzelnt vornehmnen.
-        for (int i = 0; i < fliegen.size(); i++) {
-
-            // Zur Fliege hinteleportieren.
-            setLocation(fliegen.get(i).getX(), fliegen.get(i).getY());
-
-            // Fliege eliminieren.
-            fliegeFressen();
-
-            // Kontostand erhöhen.
-            kontostand ++;
-
-            // Info-Meldung für den Zuschauer geben.
-            JOptionPane.showMessageDialog(null, "-1 addiert auf Anzahl Fliegen", "log",
-                    JOptionPane.ERROR_MESSAGE);
-
-            // Warten, bis die nächste Fliege gefressen wird.
-            warten(1000);
+    public int fliegeSuchen() {
+        int count = 0;
+        while (!fliegeAmPlatz()) {
+            this.schritt();
+            count++;
         }
-
-        JOptionPane.showMessageDialog(null, "Mein Kontostand liegt bei " + kontostand + "; Währung: tote Fliegen",
-                "log",
-                JOptionPane.ERROR_MESSAGE);
+        return count;
     }
 }

@@ -159,71 +159,10 @@ public class SpinnenWelt extends World
      */
     private void prepare()
     {
-        Spinne spinne = new Spinne();
-        addObject(spinne,2,7);
+
+        Tarantel tarantel = new Tarantel();
+        addObject(tarantel,5,7);
         Fliege fliege = new Fliege();
-        addObject(fliege,9,3);
-        Hindernis hindernis = new Hindernis();
-        addObject(hindernis,6,6);
-        Klatsche klatsche = new Klatsche();
-        addObject(klatsche,4,3);
-        Klatsche klatsche2 = new Klatsche();
-        addObject(klatsche2,11,7);
-        Hindernis hindernis2 = new Hindernis();
-        addObject(hindernis2,6,7);
-        Hindernis hindernis3 = new Hindernis();
-        addObject(hindernis3,7,5);
-        Hindernis hindernis4 = new Hindernis();
-        addObject(hindernis4,8,4);
-        Hindernis hindernis5 = new Hindernis();
-        addObject(hindernis5,3,2);
-        Hindernis hindernis6 = new Hindernis();
-        addObject(hindernis6,2,1);
-        Spinne spinne2 = new Spinne();
-        addObject(spinne2,7,6);
-        Spinne spinne3 = new Spinne();
-        addObject(spinne3,11,2);
-        Spinne spinne4 = new Spinne();
-        addObject(spinne4,6,2);
-        Fliege fliege2 = new Fliege();
-        addObject(fliege2,8,8);
-        Fliege fliege3 = new Fliege();
-        addObject(fliege3,13,7);
-        Fliege fliege4 = new Fliege();
-        addObject(fliege4,2,5);
-        Fliege fliege5 = new Fliege();
-        addObject(fliege5,2,2);
-        
-        addObject(hindernis6,13,8);
-        Hindernis hindernis7 = new Hindernis();
-        addObject(hindernis7,13,7);
-        Hindernis hindernis8 = new Hindernis();
-        addObject(hindernis8,13,6);
-        Hindernis hindernis9 = new Hindernis();
-        addObject(hindernis9,13,4);
-        Hindernis hindernis10 = new Hindernis();
-        addObject(hindernis10,13,3);
-        Hindernis hindernis11 = new Hindernis();
-        addObject(hindernis11,13,5);
-        Hindernis hindernis12 = new Hindernis();
-        addObject(hindernis12,16,8);
-        Hindernis hindernis13 = new Hindernis();
-        addObject(hindernis13,18,8);
-        Hindernis hindernis14 = new Hindernis();
-        addObject(hindernis14,18,7);
-        Hindernis hindernis15 = new Hindernis();
-        addObject(hindernis15,18,6);
-        Hindernis hindernis16 = new Hindernis();
-        addObject(hindernis16,22,8);
-        Hindernis hindernis17 = new Hindernis();
-        addObject(hindernis17,22,7);
-        Hindernis hindernis18 = new Hindernis();
-        addObject(hindernis18,25,8);
-        Hindernis hindernis19 = new Hindernis();
-        addObject(hindernis19,25,7);
-        Hindernis hindernis20 = new Hindernis();
-        addObject(hindernis20,25,6);
-        Hindernis hindernis21 = new Hindernis();
-        addObject(hindernis21,25,5);
+        addObject(fliege,14,7);
     }
 }
