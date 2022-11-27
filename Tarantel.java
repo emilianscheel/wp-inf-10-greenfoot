@@ -22,9 +22,47 @@ public class Tarantel extends Spinne {
     
     public void fliegeInWaldSuchen() {
         
+        int letztesHindernis = 0;
+        int count = 0;
         
+        while(!this.fliegeAmPlatz()) {
+            
+            if (letztesHindernis == 1) {
+                this.schritt();
+                this.schritt();
+                this.rechtsDrehen();
+                this.geheBisHindernis();
+                this.linksDrehen();
+                letztesHindernis = 0;
+            }
+            else if (!this.hindernisVorn()) {
+                this.schritt();
+            }
+            else {
+                this.linksDrehen();
+                this.schritt();
+                this.rechtsDrehen();
 
+                if (!this.hindernisVorn()) {
+                    letztesHindernis = 1;
+                }
+            }
+    
+        }
+        
+        this.fliegeFressen();
+        
+        JOptionPane.showMessageDialog(null, "Fliege gefunden und gefressen.",
+                "Hinweis",
+                JOptionPane.ERROR_MESSAGE);
     }
+    
+    public void geheBisHindernis() {
+        while (!this.hindernisVorn()) {
+            this.schritt();
+        }
+    }
+    
 
     public void fliegenEliminieren() {
     
